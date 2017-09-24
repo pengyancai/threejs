@@ -1,6 +1,1 @@
-git test form threejs
-222222222222
-33333
-454545
-666
-777
+学习threejs，尝试使用git

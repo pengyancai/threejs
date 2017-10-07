@@ -1,7 +1,7 @@
-    * 普通文本
-    * 单行文本
+    普通文本
+    单行文本
 	
-demo预览列表：
+    demo预览列表：
     [简单demo](http://htmlpreview.github.io/?https://github.com/pengyancai/threejs/blob/master/index.html)
     [加载obj](http://htmlpreview.github.io/?https://github.com/pengyancai/threejs/blob/master/load_obj.html)
     [加载draco](http://htmlpreview.github.io/?https://github.com/pengyancai/threejs/blob/master/load_draco.html)

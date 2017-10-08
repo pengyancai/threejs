@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d1099359-bb7d-4725-8be7-4e3f2a685fe8" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resource/models/LeePerrySmith.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/load_js_model.html" afterPath="$PROJECT_DIR$/load_js_model.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource/models/Suzanne.js" afterPath="$PROJECT_DIR$/resource/models/Suzanne.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/use_custom_shader.html" afterPath="$PROJECT_DIR$/use_custom_shader.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -17,21 +17,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="use_custom_shader.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="use_custom_shader.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/use_custom_shader.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="97">
-              <caret line="21" column="52" lean-forward="true" selection-start-line="21" selection-start-column="52" selection-end-line="21" selection-end-column="52" />
+            <state relative-caret-position="390">
+              <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="load_js_model.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/load_js_model.html">
+      <file leaf-file-name="normalMapsBias.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../WebGl_0824/normal map demo_files/normalMapsBias.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="54" column="0" lean-forward="true" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+            <state relative-caret-position="261">
+              <caret line="488" column="25" lean-forward="false" selection-start-line="488" selection-start-column="25" selection-end-line="488" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="three.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../three.js-master/build/three.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="17822" column="0" lean-forward="true" selection-start-line="17822" selection-start-column="0" selection-end-line="17822" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -51,6 +61,7 @@
       <find>DracoModule</find>
       <find>WaltHeadLo.js</find>
       <find>tocak_felna</find>
+      <find>uniformsMain</find>
     </findStrings>
     <replaceStrings>
       <replace>Module</replace>
@@ -67,9 +78,10 @@
         <option value="$PROJECT_DIR$/js/libs/loaders/DRACOLoader.min.js" />
         <option value="$PROJECT_DIR$/load_draco.html" />
         <option value="$PROJECT_DIR$/load_obj.html" />
-        <option value="$PROJECT_DIR$/use_custom_shader.html" />
         <option value="$PROJECT_DIR$/standard.html" />
         <option value="$PROJECT_DIR$/load_js_model.html" />
+        <option value="$PROJECT_DIR$/../WebGl_0824/normal map demo_files/phldr.min.js" />
+        <option value="$PROJECT_DIR$/use_custom_shader.html" />
       </list>
     </option>
   </component>
@@ -86,9 +98,9 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="172" />
+    <option name="y" value="112" />
     <option name="width" value="1674" />
     <option name="height" value="771" />
   </component>
@@ -122,6 +134,44 @@
               <item name="ThreejsStudy" type="47feb1d3:ProjectViewModuleNode" />
               <item name="threejs" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="threejs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ThreejsStudy" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="threejs" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="threejs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ThreejsStudy" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="threejs" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="libs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="threejs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ThreejsStudy" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="threejs" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="libs" type="462c0819:PsiDirectoryNode" />
+              <item name="loaders" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="threejs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ThreejsStudy" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="WebGl_0824" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="threejs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ThreejsStudy" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="WebGl_0824" type="462c0819:PsiDirectoryNode" />
+              <item name="normal map demo_files" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="threejs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ThreejsStudy" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="WebGl_0824" type="462c0819:PsiDirectoryNode" />
+              <item name="textures" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -149,17 +199,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.load_draco.html">
+  <component name="RunManager" selected="JavaScript Debug.use_custom_shader.html">
     <configuration name="index.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/ThreejsStudy/index.html" />
     <configuration name="load_draco.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/threejs/load_draco.html" />
-    <list size="2">
+    <configuration name="use_custom_shader.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/threejs/use_custom_shader.html" />
+    <list size="3">
       <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
       <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.load_draco.html" />
+      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.use_custom_shader.html" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.load_draco.html" />
-        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
+      <list size="3">
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.use_custom_shader.html" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.load_draco.html" />
+        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
       </list>
     </recent_temporary>
   </component>
@@ -177,7 +230,7 @@
       <workItem from="1506086594056" duration="6182000" />
       <workItem from="1506092836949" duration="19000" />
       <workItem from="1506231615389" duration="617000" />
-      <workItem from="1507361874246" duration="23775000" />
+      <workItem from="1507361874246" duration="29605000" />
     </task>
     <task id="LOCAL-00001" summary="试下从WebStorm上提交">
       <created>1507365797441</created>
@@ -190,22 +243,22 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30926000" />
+    <option name="totallyTimeSpent" value="36756000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="172" y="112" width="1674" height="771" extended-state="1" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1859375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21531966" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4726444" sideWeight="0.50241256" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4726444" sideWeight="0.49758744" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973656" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3202545" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3202545" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -226,19 +279,25 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="6" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/../WebGl_0824/normal map demo_files/phldr.min.js</url>
+          <line>87</line>
+          <properties />
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/js/libs/loaders/phldr.min.js</url>
+          <line>24</line>
+          <properties />
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="10" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="910">
-          <caret line="35" column="24" lean-forward="false" selection-start-line="35" selection-start-column="24" selection-end-line="35" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/load_draco.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="104">
@@ -452,38 +511,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../WebGl_0824/normal map demo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../WebGl_0824/normal map demo_files/normalMapsBias.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="261" column="37" lean-forward="false" selection-start-line="261" selection-start-column="37" selection-end-line="261" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../WebGl_0824/normal map demo_files/phldr.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/libs/loaders/phldr.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="7" column="194" lean-forward="false" selection-start-line="7" selection-start-column="194" selection-end-line="7" selection-end-column="194" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/load_obj.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="274">
@@ -496,14 +523,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
           <caret line="375" column="14" lean-forward="true" selection-start-line="375" selection-start-column="14" selection-end-line="375" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../three.js-master/build/three.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-843">
-          <caret line="14856" column="29" lean-forward="false" selection-start-line="14856" selection-start-column="29" selection-end-line="14856" selection-end-column="29" />
           <folding />
         </state>
       </provider>
@@ -532,18 +551,141 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/use_custom_shader.html">
+    <entry file="file://$PROJECT_DIR$/load_js_model.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="21" column="52" lean-forward="true" selection-start-line="21" selection-start-column="52" selection-end-line="21" selection-end-column="52" />
+        <state relative-caret-position="234">
+          <caret line="27" column="44" lean-forward="false" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="47" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/load_js_model.html">
+    <entry file="file://$PROJECT_DIR$/../WebGl_0824/normal map demo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="22" column="2012" lean-forward="false" selection-start-line="22" selection-start-column="2012" selection-end-line="22" selection-end-column="2012" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/EcmaScript.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="132" column="0" lean-forward="false" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../WebGl_0824/normal map demo_files/phldr.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="87" column="27" lean-forward="true" selection-start-line="87" selection-start-column="27" selection-end-line="87" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/libs/loaders/phldr.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="27" column="16" lean-forward="false" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../WebGl_0824/normal map demo_files/three.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../WebGl_0824/normal map demo_files/Stats.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../WebGl_0824/normal map demo_files/OrbitControls.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../WebGl_0824/normal map demo_files/jquery.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../WebGl_0824/normal map demo_files/Detector.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1472003364372" expanded="true" signature="1111:1121" ph="..." />
+            <marker date="1472003364372" expanded="true" signature="1209:1219" ph="..." />
+            <marker date="1472003364372" expanded="true" signature="1375:1385" ph="..." />
+            <marker date="1472003364372" expanded="true" signature="1472:1482" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../WebGl_0824/normal map demo_files/dat.gui.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../WebGl_0824/normal map demo_files/THREEx.WindowResize.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../WebGl_0824/normal map demo_files/THREEx.FullScreen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="26" column="3" lean-forward="true" selection-start-line="26" selection-start-column="3" selection-end-line="26" selection-end-column="3" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../three.js-master/build/three.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17822" column="0" lean-forward="true" selection-start-line="17822" selection-start-column="0" selection-end-line="17822" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../WebGl_0824/normal map demo_files/normalMapsBias.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="488" column="25" lean-forward="false" selection-start-line="488" selection-start-column="25" selection-end-line="488" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/use_custom_shader.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
-          <caret line="54" column="0" lean-forward="true" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding />
         </state>
       </provider>

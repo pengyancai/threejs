@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>彭延财-use_custom_shader</title>
+    <title>彭延财-standard</title>
     <script src="js/libs/three.min.js"></script>
 </head>
 <body>
@@ -41,7 +41,10 @@
     function animate() {
         requestAnimationFrame(animate);
 
-        mesh.rotation.y += 0.01;
+        if (mesh instanceof THREE.Object3D)
+        {
+            mesh.rotation.y += 0.01;
+        }
 
         renderer.render(scene, camera);
     }

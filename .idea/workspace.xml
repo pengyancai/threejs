@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d1099359-bb7d-4725-8be7-4e3f2a685fe8" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/libs/loaders/phldr.min.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resource/models/LeePerrySmith.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/load_js_model.html" afterPath="$PROJECT_DIR$/load_js_model.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -21,28 +20,8 @@
       <file leaf-file-name="use_custom_shader.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/use_custom_shader.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="409">
-              <caret line="33" column="55" lean-forward="true" selection-start-line="33" selection-start-column="55" selection-end-line="33" selection-end-column="55" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="load_obj.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/load_obj.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="50" column="6" lean-forward="false" selection-start-line="50" selection-start-column="6" selection-end-line="50" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../three.js-master/examples/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="375" column="14" lean-forward="true" selection-start-line="375" selection-start-column="14" selection-end-line="375" selection-end-column="14" />
+            <state relative-caret-position="97">
+              <caret line="21" column="52" lean-forward="true" selection-start-line="21" selection-start-column="52" selection-end-line="21" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -51,68 +30,8 @@
       <file leaf-file-name="load_js_model.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/load_js_model.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="standard.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/standard.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="825">
-              <caret line="43" column="43" lean-forward="true" selection-start-line="43" selection-start-column="43" selection-end-line="43" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ObjectLoader.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../three.js-master/src/loaders/ObjectLoader.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-7592">
-              <caret line="47" column="33" lean-forward="false" selection-start-line="47" selection-start-column="33" selection-end-line="47" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="normal map demo.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../WebGl_0824/normal map demo.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="normalMapsBias.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../WebGl_0824/normal map demo_files/normalMapsBias.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="261" column="37" lean-forward="false" selection-start-line="261" selection-start-column="37" selection-end-line="261" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="phldr.min.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../WebGl_0824/normal map demo_files/phldr.min.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="load_draco.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/load_draco.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="115" column="24" lean-forward="true" selection-start-line="115" selection-start-column="24" selection-end-line="115" selection-end-column="24" />
+            <state relative-caret-position="390">
+              <caret line="54" column="0" lean-forward="true" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -203,27 +122,6 @@
               <item name="ThreejsStudy" type="47feb1d3:ProjectViewModuleNode" />
               <item name="threejs" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="threejs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ThreejsStudy" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="threejs" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="threejs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ThreejsStudy" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="threejs" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="libs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="threejs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ThreejsStudy" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="threejs" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="libs" type="462c0819:PsiDirectoryNode" />
-              <item name="loaders" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -279,7 +177,7 @@
       <workItem from="1506086594056" duration="6182000" />
       <workItem from="1506092836949" duration="19000" />
       <workItem from="1506231615389" duration="617000" />
-      <workItem from="1507361874246" duration="22525000" />
+      <workItem from="1507361874246" duration="23775000" />
     </task>
     <task id="LOCAL-00001" summary="试下从WebStorm上提交">
       <created>1507365797441</created>
@@ -292,7 +190,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29676000" />
+    <option name="totallyTimeSpent" value="30926000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -636,16 +534,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/use_custom_shader.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="33" column="55" lean-forward="true" selection-start-line="33" selection-start-column="55" selection-end-line="33" selection-end-column="55" />
+        <state relative-caret-position="97">
+          <caret line="21" column="52" lean-forward="true" selection-start-line="21" selection-start-column="52" selection-end-line="21" selection-end-column="52" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/load_js_model.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+        <state relative-caret-position="390">
+          <caret line="54" column="0" lean-forward="true" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
           <folding />
         </state>
       </provider>

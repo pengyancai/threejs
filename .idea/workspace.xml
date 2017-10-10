@@ -2,8 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d1099359-bb7d-4725-8be7-4e3f2a685fe8" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resource/images/cubemaps/OutputCube2test.dds" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/libs/CopyShader.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/libs/EffectComposer.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/libs/FXAAShader.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/libs/MaskPass.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/libs/RenderPass.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/libs/ShaderPass.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/libs/createNoise.js" afterPath="$PROJECT_DIR$/js/libs/createNoise.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/libs/createPatt.js" afterPath="$PROJECT_DIR$/js/libs/createPatt.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/use_custom_shader.js" afterPath="$PROJECT_DIR$/js/use_custom_shader.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/use_custom_shader.html" afterPath="$PROJECT_DIR$/use_custom_shader.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -17,11 +26,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="use_custom_shader.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="use_custom_shader.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/use_custom_shader.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="426" column="53" lean-forward="false" selection-start-line="426" selection-start-column="53" selection-end-line="426" selection-end-column="53" />
+            <state relative-caret-position="396">
+              <caret line="426" column="35" lean-forward="false" selection-start-line="426" selection-start-column="35" selection-end-line="426" selection-end-column="35" />
               <folding>
                 <element signature="n#script#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#script#1;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -33,8 +42,60 @@
       <file leaf-file-name="use_custom_shader.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/use_custom_shader.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="140" column="47" lean-forward="true" selection-start-line="140" selection-start-column="47" selection-end-line="140" selection-end-column="47" />
+            <state relative-caret-position="364">
+              <caret line="244" column="55" lean-forward="true" selection-start-line="244" selection-start-column="55" selection-end-line="244" selection-end-column="55" />
+              <folding>
+                <element signature="e#1437#1569#0" expanded="false" />
+                <element signature="e#1650#1786#0" expanded="false" />
+                <element signature="e#1867#2031#0" expanded="false" />
+                <element signature="e#2111#2271#0" expanded="false" />
+                <element signature="e#2352#2516#0" expanded="false" />
+                <element signature="e#2597#2761#0" expanded="false" />
+                <element signature="e#2791#3155#0" expanded="false" />
+                <element signature="e#3533#3852#0" expanded="false" />
+                <element signature="e#3949#4115#0" expanded="false" />
+                <element signature="e#4143#6685#0" expanded="false" />
+                <element signature="e#6712#6843#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="addControl.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/addControl.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="104">
+              <caret line="4" column="25" lean-forward="false" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="use_custom_shader_simple.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/use_custom_shader_simple.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="104">
+              <caret line="4" column="39" lean-forward="false" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="use_customShader_draco.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/use_customShader_draco.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-119">
+              <caret line="7" column="6" lean-forward="true" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="standard.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/standard.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="234">
+              <caret line="18" column="30" lean-forward="false" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -51,16 +112,11 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>DracoModule</find>
-      <find>WaltHeadLo.js</find>
       <find>tocak_felna</find>
-      <find>uniformsMain</find>
       <find>gRefPower</find>
       <find>gGlossines</find>
       <find>ph_binormal</find>
-      <find>attributes1</find>
       <find>mipVert</find>
-      <find>composer</find>
       <find>tppabs=.*&quot;&gt;</find>
       <find>tppabs=.*&quot;</find>
       <find>scripts/</find>
@@ -69,6 +125,23 @@
       <find>container</find>
       <find>&quot;resource</find>
       <find>.dds</find>
+      <find>meshes</find>
+      <find>lopta</find>
+      <find>composer</find>
+      <find>renderScene</find>
+      <find>texSmooth</find>
+      <find>gl</find>
+      <find>uniformsMain</find>
+      <find>SCREEN_WIDTH</find>
+      <find>clock</find>
+      <find>texTocakFelnaDiff</find>
+      <find>rands</find>
+      <find>noiz</find>
+      <find>attributes1</find>
+      <find>noiz2screen</find>
+      <find>rtWidth</find>
+      <find>rtHeight</find>
+      <find>$</find>
     </findStrings>
     <replaceStrings>
       <replace>Module</replace>
@@ -90,14 +163,19 @@
         <option value="$PROJECT_DIR$/js/libs/loaders/DRACOLoader.min.js" />
         <option value="$PROJECT_DIR$/load_draco.html" />
         <option value="$PROJECT_DIR$/load_obj.html" />
-        <option value="$PROJECT_DIR$/standard.html" />
         <option value="$PROJECT_DIR$/load_js_model.html" />
         <option value="$PROJECT_DIR$/../WebGl_0824/normal map demo_files/phldr.min.js" />
         <option value="D:/pengyancai/Desktop/TestServer/dusanbosnjak/dusanbosnjak.com/test/webGL/new/pbr/poredjenjeNormalaBias.html" />
         <option value="$PROJECT_DIR$/webGL/new/pbr/poredjenjeNormalaBias.html" />
         <option value="$PROJECT_DIR$/js/libs/normalMapsBias.js" />
+        <option value="$PROJECT_DIR$/standard.html" />
+        <option value="$PROJECT_DIR$/js/libs/createNoise.js" />
+        <option value="$PROJECT_DIR$/js/libs/createPatt.js" />
         <option value="$PROJECT_DIR$/use_custom_shader.html" />
         <option value="$PROJECT_DIR$/js/use_custom_shader.js" />
+        <option value="$PROJECT_DIR$/addControl.html" />
+        <option value="$PROJECT_DIR$/use_custom_shader_simple.html" />
+        <option value="$PROJECT_DIR$/use_customShader_draco.html" />
       </list>
     </option>
   </component>
@@ -214,7 +292,7 @@
       <workItem from="1506086594056" duration="6182000" />
       <workItem from="1506092836949" duration="19000" />
       <workItem from="1506231615389" duration="617000" />
-      <workItem from="1507361874246" duration="49087000" />
+      <workItem from="1507361874246" duration="54175000" />
     </task>
     <task id="LOCAL-00001" summary="试下从WebStorm上提交">
       <created>1507365797441</created>
@@ -227,7 +305,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56238000" />
+    <option name="totallyTimeSpent" value="61326000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -235,14 +313,14 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19791667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16330859" sideWeight="0.50208336" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16330859" sideWeight="0.49791667" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16330859" sideWeight="0.50416666" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16330859" sideWeight="0.49583334" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973656" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3202545" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3202545" sideWeight="0.49791667" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -271,73 +349,11 @@
           <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="11" />
+      <option name="time" value="13" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/example/DRACOLoader.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="93" column="0" lean-forward="true" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/geometry_helper.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1472">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/libs/loaders/OBJLoader.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="14" column="29" lean-forward="true" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/webgl_loader_draco.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5">
-          <caret line="218" column="0" lean-forward="true" selection-start-line="218" selection-start-column="0" selection-end-line="218" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/libs/loaders/draco_decoder.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="4" lean-forward="false" selection-start-line="0" selection-start-column="4" selection-end-line="0" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/libs/loaders/DRACOLoader.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1321">
-          <caret line="8" column="26" lean-forward="false" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="27" column="31" lean-forward="false" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/libs/three.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="380" column="338" lean-forward="false" selection-start-line="380" selection-start-column="338" selection-end-line="380" selection-end-column="338" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../three.js-master/examples/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
@@ -350,14 +366,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-7592">
           <caret line="47" column="33" lean-forward="false" selection-start-line="47" selection-start-column="33" selection-end-line="47" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/standard.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="825">
-          <caret line="43" column="43" lean-forward="true" selection-start-line="43" selection-start-column="43" selection-end-line="43" selection-end-column="43" />
           <folding />
         </state>
       </provider>
@@ -538,14 +546,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/load_draco.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="106" column="8" lean-forward="true" selection-start-line="106" selection-start-column="8" selection-end-line="106" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://D:/pengyancai/Desktop/TestServer/dusanbosnjak/dusanbosnjak.com/test/webGL/libs/EffectComposer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="104">
@@ -626,14 +626,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/load_obj.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="7" column="7" lean-forward="true" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://D:/pengyancai/Desktop/TestServer/dusanbosnjak/dusanbosnjak.com/test/webGL/new/stoj/normal map demo2_files/normalMaps.min-1.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="246">
@@ -687,22 +679,122 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/use_custom_shader.js">
+    <entry file="file://$PROJECT_DIR$/../three.js-master/examples/js/renderers/CanvasRenderer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="140" column="47" lean-forward="true" selection-start-line="140" selection-start-column="47" selection-end-line="140" selection-end-column="47" />
+        <state relative-caret-position="254">
+          <caret line="146" column="4" lean-forward="false" selection-start-line="146" selection-start-column="4" selection-end-line="146" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/load_obj.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/load_draco.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="118" column="8" lean-forward="true" selection-start-line="118" selection-start-column="8" selection-end-line="123" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/libs/jquery.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="15" column="13108" lean-forward="false" selection-start-line="15" selection-start-column="13108" selection-end-line="15" selection-end-column="13108" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/standard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="18" column="30" lean-forward="false" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/libs/createNoise.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="30" column="17" lean-forward="true" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/libs/createPatt.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="30" column="9" lean-forward="true" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/libs/pailhead_loader_final.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1381">
+          <caret line="120" column="14" lean-forward="false" selection-start-line="120" selection-start-column="4" selection-end-line="120" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/use_custom_shader.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="426" column="53" lean-forward="false" selection-start-line="426" selection-start-column="53" selection-end-line="426" selection-end-column="53" />
+        <state relative-caret-position="396">
+          <caret line="426" column="35" lean-forward="false" selection-start-line="426" selection-start-column="35" selection-end-line="426" selection-end-column="35" />
           <folding>
             <element signature="n#script#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#script#1;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/use_custom_shader.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="244" column="55" lean-forward="true" selection-start-line="244" selection-start-column="55" selection-end-line="244" selection-end-column="55" />
+          <folding>
+            <element signature="e#1437#1569#0" expanded="false" />
+            <element signature="e#1650#1786#0" expanded="false" />
+            <element signature="e#1867#2031#0" expanded="false" />
+            <element signature="e#2111#2271#0" expanded="false" />
+            <element signature="e#2352#2516#0" expanded="false" />
+            <element signature="e#2597#2761#0" expanded="false" />
+            <element signature="e#2791#3155#0" expanded="false" />
+            <element signature="e#3533#3852#0" expanded="false" />
+            <element signature="e#3949#4115#0" expanded="false" />
+            <element signature="e#4143#6685#0" expanded="false" />
+            <element signature="e#6712#6843#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addControl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="4" column="25" lean-forward="false" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/use_custom_shader_simple.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="4" column="39" lean-forward="false" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/use_customShader_draco.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-119">
+          <caret line="7" column="6" lean-forward="true" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -1,6 +1,5 @@
-function noiseTex(texSize, alpha){
-
-
+function noiseTex(texSize, alpha)
+{
 	if(alpha){
 		var subPixel = 4; 
 	} else {
@@ -16,10 +15,6 @@ function noiseTex(texSize, alpha){
 
 	for (var i = 0; i < texSize; i++){//udji u red
 		for (var k = 0; k < texSize; k++){//udji u kolonu
-			
-			// console.log('pixel ' + ((i*texSize)+k) );
-
-
 			for (var j = 0; j < subPixel; j++){
 				var index = subPixel*(i*texSize+k) + j;//w00t!
 				var r = Math.random();

@@ -1,5 +1,5 @@
-function pattTex(texSize){
-
+function pattTex(texSize)
+{
 	var arraySize = texSize * texSize * 4;//rgba
 	var pixelArray = new Uint8Array(arraySize);
 	
@@ -28,11 +28,6 @@ function pattTex(texSize){
 				r4 = r4 * .5 + .5; 
 				r4 *= 255;
 				pixelArray[index] = r4;
-
-
-				// console.log(r);
-				// console.log('index ' + index + '= ' + pixelArray[index]);
-			// }
 		}
 	}
 	var tex = new THREE.DataTexture(

@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d1099359-bb7d-4725-8be7-4e3f2a685fe8" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/libs/CopyShader.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/libs/EffectComposer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/libs/FXAAShader.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/libs/MaskPass.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/libs/RenderPass.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/libs/ShaderPass.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/libs/createNoise.js" afterPath="$PROJECT_DIR$/js/libs/createNoise.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/libs/createPatt.js" afterPath="$PROJECT_DIR$/js/libs/createPatt.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/use_custom_shader.js" afterPath="$PROJECT_DIR$/js/use_custom_shader.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/use_custom_shader.html" afterPath="$PROJECT_DIR$/use_custom_shader.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -29,12 +20,32 @@
       <file leaf-file-name="use_custom_shader.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/use_custom_shader.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="426" column="35" lean-forward="false" selection-start-line="426" selection-start-column="35" selection-end-line="426" selection-end-column="35" />
+            <state relative-caret-position="468">
+              <caret line="428" column="10" lean-forward="false" selection-start-line="428" selection-start-column="10" selection-end-line="428" selection-end-column="10" />
               <folding>
                 <element signature="n#script#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#script#1;n#body#0;n#html#0;n#!!top" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="208">
+              <caret line="8" column="35" lean-forward="false" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="52">
+              <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -81,11 +92,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="use_customShader_draco.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="use_customShader_draco.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/use_customShader_draco.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-119">
-              <caret line="7" column="6" lean-forward="true" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+            <state relative-caret-position="63">
+              <caret line="14" column="14" lean-forward="false" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -176,6 +187,8 @@
         <option value="$PROJECT_DIR$/addControl.html" />
         <option value="$PROJECT_DIR$/use_custom_shader_simple.html" />
         <option value="$PROJECT_DIR$/use_customShader_draco.html" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -193,8 +206,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="288" />
-    <option name="y" value="81" />
+    <option name="x" value="97" />
+    <option name="y" value="195" />
     <option name="width" value="1674" />
     <option name="height" value="866" />
   </component>
@@ -227,12 +240,6 @@
               <item name="threejs" type="b2602c69:ProjectViewProjectNode" />
               <item name="ThreejsStudy" type="47feb1d3:ProjectViewModuleNode" />
               <item name="threejs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="threejs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ThreejsStudy" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="threejs" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -292,7 +299,7 @@
       <workItem from="1506086594056" duration="6182000" />
       <workItem from="1506092836949" duration="19000" />
       <workItem from="1506231615389" duration="617000" />
-      <workItem from="1507361874246" duration="54175000" />
+      <workItem from="1507361874246" duration="55713000" />
     </task>
     <task id="LOCAL-00001" summary="试下从WebStorm上提交">
       <created>1507365797441</created>
@@ -305,7 +312,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61326000" />
+    <option name="totallyTimeSpent" value="62864000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -354,22 +361,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../three.js-master/examples/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="375" column="14" lean-forward="true" selection-start-line="375" selection-start-column="14" selection-end-line="375" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../three.js-master/src/loaders/ObjectLoader.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7592">
-          <caret line="47" column="33" lean-forward="false" selection-start-line="47" selection-start-column="33" selection-end-line="47" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../WebGl_0824/normal map demo.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
@@ -743,17 +734,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/use_custom_shader.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="426" column="35" lean-forward="false" selection-start-line="426" selection-start-column="35" selection-end-line="426" selection-end-column="35" />
-          <folding>
-            <element signature="n#script#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#script#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/use_custom_shader.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="364">
@@ -792,8 +772,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/use_customShader_draco.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-119">
-          <caret line="7" column="6" lean-forward="true" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+        <state relative-caret-position="63">
+          <caret line="14" column="14" lean-forward="false" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/use_custom_shader.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="428" column="10" lean-forward="false" selection-start-line="428" selection-start-column="10" selection-end-line="428" selection-end-column="10" />
+          <folding>
+            <element signature="n#script#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#script#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="8" column="35" lean-forward="false" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding />
         </state>
       </provider>

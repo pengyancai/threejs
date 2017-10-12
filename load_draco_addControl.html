@@ -122,12 +122,12 @@
     function animate() {
         requestAnimationFrame(animate);
 
-//        if (geometry instanceof THREE.Object3D)
-//        {
+        if (geometry instanceof THREE.Object3D)
+        {
 //            geometry.rotation.x += 0.01;
-//            geometry.rotation.y += 0.01;
+            geometry.rotation.y += 0.01;
 //            geometry.rotation.z += 0.01;
-//        }
+        }
         controls.update();
         renderer.render(scene, camera);
     }

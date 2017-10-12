@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>彭延财-load_draco_addControl</title>
+    <script src="js/libs/three.min.js"></script>
+    <script src="js/libs/loaders/draco_decoder.js"></script>
+    <script src="js/libs/loaders/DRACOLoader.min.js"></script>
+    <script src="js/libs/OrbitControls.js"></script>
+</head>
+<body>
+<script>
+    var scene, camera, renderer, geometry, controls;
+    init();
+    animate();
+
+    function init() {
+        scene = new THREE.Scene();
+
+        camera = new THREE.PerspectiveCamera(75-60, window.innerWidth / window.innerHeight, 1, 1000);
+        camera.position.z = 3;
+
+//        var geometry = new THREE.CubeGeometry(1, 1, 1);
+        var material = new THREE.MeshBasicMaterial( { color: 0x00ff00, wireframe: true });
+
+        var diffuseMapPath = "resource/images/diffuseMap.jpg";
+        var texture = new THREE.Texture();
+        var loader = new THREE.TextureLoader();
+        var material = new THREE.MeshBasicMaterial({
+            color: 16777215,
+            specular: 2236962,
+            shininess: 15,
+            side: THREE.DoubleSide,
+            wireframe: false,
+            shading: THREE.SmoothShading,
+//             normalMap: b.load("model/model1/model1_normal.jpg"),
+            map: loader.load(diffuseMapPath,
+                function(image) {
+                    texture.image = image;
+                    texture.needsUpdate = true;
+                })
+        });
+//        mesh = new THREE.Mesh(geometry, material);
+//        scene.add(mesh);
+
+//        load draco
+        var modelPath = "resource/models/model1.drc";
+        var dracoLoader = new THREE.DRACOLoader();
+        dracoLoader.load(modelPath, function (bufferGeometry) {
+                if (bufferGeometry.index == null)
+                {
+                    var pointsMaterial = new THREE.PointsMaterial(
+                        {
+                            size: 0.001,
+                            color: 5574929,
+                            vertexColors: THREE.VertexColors
+                        }
+                    );
+                    geometry = new THREE.Points(bufferGeometry, pointsMaterial);
+                }
+                else
+                {
+                    bufferGeometry.computeVertexNormals();
+                    geometry = new THREE.Mesh(bufferGeometry, material)
+                }
+                bufferGeometry.computeBoundingBox();
+                if (bufferGeometry.attributes['position'].isQuantized)
+                {
+                    var posAttribute = bufferGeometry.attributes['position'];
+                    var normConstant = posAttribute.maxRange / (1 << posAttribute.numQuantizationBits);
+                    var minPos = posAttribute.minValues;
+                    bufferGeometry.boundingBox.max.x = minPos[0] + bufferGeometry.boundingBox.max.x * normConstant;
+                    bufferGeometry.boundingBox.max.y = minPos[1] + bufferGeometry.boundingBox.max.y * normConstant;
+                    bufferGeometry.boundingBox.max.z = minPos[2] + bufferGeometry.boundingBox.max.z * normConstant;
+                    bufferGeometry.boundingBox.min.x = minPos[0] + bufferGeometry.boundingBox.min.x * normConstant;
+                    bufferGeometry.boundingBox.min.y = minPos[1] + bufferGeometry.boundingBox.min.y * normConstant;
+                    bufferGeometry.boundingBox.min.z = minPos[2] + bufferGeometry.boundingBox.min.z * normConstant;
+                }
+                var sizeX = bufferGeometry.boundingBox.max.x - bufferGeometry.boundingBox.min.x;
+                var sizeY = bufferGeometry.boundingBox.max.y - bufferGeometry.boundingBox.min.y;
+                var sizeZ = bufferGeometry.boundingBox.max.z - bufferGeometry.boundingBox.min.z;
+                scale = 1 / Math.sqrt(sizeX * sizeX + sizeY * sizeY + sizeZ * sizeZ);
+                var midX = (bufferGeometry.boundingBox.min.x + bufferGeometry.boundingBox.max.x) / 2;
+                var midY = (bufferGeometry.boundingBox.min.y + bufferGeometry.boundingBox.max.y) / 2;
+                var midZ = (bufferGeometry.boundingBox.min.z + bufferGeometry.boundingBox.max.z) / 2;
+                geometry.scale.multiplyScalar(scale);
+                geometry.position.x = -midX * scale;
+                geometry.position.y = -midY * scale;
+                geometry.position.z = -midZ * scale;
+//            geometry.castShadow = true;
+//            geometry.receiveShadow = true;
+
+                var selectedObject = scene.getObjectByName("currentMesh");
+                scene.remove(selectedObject);
+                geometry.name = "currentMesh";
+                scene.add(geometry);
+            },
+            function onProgress() {
+
+            },
+            function onError() {
+
+            });
+
+        renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+
+        document.body.appendChild(renderer.domElement);
+        window.addEventListener('resize', function () {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }, false);
+
+        controls = new THREE.OrbitControls(camera);
+        controls.addEventListener('change', function () {
+            renderer.render(scene, camera);
+        });
+    }
+
+    function animate() {
+        requestAnimationFrame(animate);
+
+//        if (geometry instanceof THREE.Object3D)
+//        {
+//            geometry.rotation.x += 0.01;
+//            geometry.rotation.y += 0.01;
+//            geometry.rotation.z += 0.01;
+//        }
+        controls.update();
+        renderer.render(scene, camera);
+    }
+
+</script>>
+</body>
+</html>

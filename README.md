@@ -7,3 +7,5 @@ _**demo预览列表**_
 * [使用简单的自定义shader](https://pengyancai.github.io/threejs/use_custom_shader_simple.html)
 * [draco模型增加键盘鼠标控制旋转位移缩放](https://pengyancai.github.io/threejs/load_draco_addControl.html)
 * [使用自定义shader和draco技术](https://pengyancai.github.io/threejs/use_customShader_draco.html)
+* [cubemap全景图](https://pengyancai.github.io/threejs/panorama.html)
+* [使用pbrShader和draco技术](https://pengyancai.github.io/threejs/pbr_draco.html)

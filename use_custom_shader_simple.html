@@ -3,9 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <title>彭延财-use_custom_shader_simple</title>
-    <script src="js/libs/three.min.js"></script>
+    <script src="js/libs/three_shader.js"></script>
 </head>
 <body>
+<script type="x-shader/x-vertex" id="vertex-shader">
+    uniform float time;
+    varying vec2 vUv;
+    void main()
+    {
+        vUv = uv;
+        vec3 posChanged = position;
+        posChanged.x = posChanged.x * (abs(sin(time*1.0)));
+        posChanged.y = posChanged.y * (abs(cos(time*1.0)));
+        posChanged.z = posChanged.z * (abs(sin(time*1.0)));
+
+        gl_Position = projectionMatrix * modelViewMatrix * vec4(posChanged, 1.0);
+    }
+</script>
+<script type="x-shader/x-fragment" id="fragment-shader">
+    uniform float resolution;
+    uniform sampler2D texture;
+    varying vec2 vUv;
+    void main()
+    {
+        vec2 uv = vUv;
+        vec3 color = texture2D(texture, uv).rgb;
+        gl_FragColor = vec4(color, 1.0);
+        //gl_FragColor = vec4(1.0, 0, 0, 1.0);
+    }
+</script>
 <script>
     var scene, camera, renderer, mesh;
 
@@ -24,7 +50,28 @@
             wireframe: false
         });
 
-        mesh = new THREE.Mesh(geometry, material);
+        var uniforms =
+            {
+                resolution:{value: new THREE.Vector2()},
+                time:{value: 0.2},
+                texture:{value: new THREE.TextureLoader().load("resource/images/d3195c0585a4803cd605e8703a16b7f2.jpeg")}
+            };
+        uniforms.resolution.value.x = window.innerWidth;
+        uniforms.resolution.value.y = window.innerHeight;
+        uniforms.texture.value.wrapS = uniforms.texture.value.wrapT = THREE.RepeatWrapping;
+//        var attributs = {};
+        var vertShader = document.getElementById('vertex-shader').innerHTML;
+        var fragShader = document.getElementById('fragment-shader').innerHTML;
+        var shaderMaterial = new THREE.ShaderMaterial(
+            {
+                uniforms:uniforms,
+//                attributes:attributs,
+                vertexShader:vertShader,
+                fragmentShader:fragShader
+            }
+        );
+
+        mesh = new THREE.Mesh(geometry, shaderMaterial);
         scene.add(mesh);
 
         renderer = new THREE.WebGLRenderer();
@@ -32,6 +79,10 @@
 
         document.body.appendChild(renderer.domElement);
         window.addEventListener('resize', function () {
+
+            uniforms.resolution.value.x = window.innerWidth;
+            uniforms.resolution.value.y = window.innerHeight;
+
             camera.aspect = window.innerWidth / window.innerHeight;
             camera.updateProjectionMatrix();
 
@@ -43,7 +94,8 @@
 
         if (mesh instanceof THREE.Object3D)
         {
-            mesh.rotation.y += 0.01;
+//            mesh.rotation.y += 0.01;
+            mesh.material.uniforms.time.value += 0.01;
         }
 
         renderer.render(scene, camera);

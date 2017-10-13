@@ -9,3 +9,4 @@ _**demo预览列表**_
 * [使用自定义shader和draco技术](https://pengyancai.github.io/threejs/use_customShader_draco.html)
 * [cubemap全景图](https://pengyancai.github.io/threejs/panorama.html)
 * [使用pbrShader和draco技术](https://pengyancai.github.io/threejs/pbr_draco.html)
+* [使用pbrShader和draco技术带控制面板](https://pengyancai.github.io/threejs/load_draco_addControl_pbr.html)

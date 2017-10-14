@@ -12,21 +12,21 @@
 <body>
 <script>
     var scene, camera, renderer, geometry, controls;
-    init();
-    animate();
-
     var Settings = function() {
-        this.ambient = 1;
-        this.diffuse = 100;
-        this.specular = 100;
+        this.roughness = 1;
+        this.metalness = 0.4;
+        this.aoMapIntensity = 0;
     };
     var settings = new Settings();
     var gui = new dat.GUI();
 
+    init();
+    animate();
+
     function init() {
-//        gui.add( settings, 'ambient', 0.0, 100.0 );
-//        gui.add( settings, 'diffuse', 0.0, 100.0 );
-//        gui.add( settings, 'specular', 0.0, 100.0 );
+        gui.add( settings, 'roughness', 0.0, 1.0 );
+        gui.add( settings, 'metalness', 0.0, 1.0 );
+        gui.add( settings, 'aoMapIntensity', 0.0, 1.0 );
 
         scene = new THREE.Scene();
 
@@ -52,8 +52,8 @@
 //            metalnessMap: textureLoader.load('resource/images/fire_hydrant_Metallic.png'),
 //            aoMap: textureLoader.load('resource/images/fire_hydrant_Mixed_AO.png'),
 
-//                roughness: 0,
-//                metalness: 1,
+            roughness: 0,
+            metalness: 1,
             aoMapIntensity: 0.5
         });
 
@@ -138,6 +138,9 @@
 
         if (geometry instanceof THREE.Object3D)
         {
+            geometry.material.roughness = settings.roughness;
+            geometry.material.metalness = settings.metalness;
+            geometry.material.aoMapIntensity = settings.aoMapIntensity;
 //            geometry.rotation.x += 0.01;
             geometry.rotation.y += 0.01;
 //            geometry.rotation.z += 0.01;

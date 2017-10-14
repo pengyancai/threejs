@@ -32,23 +32,16 @@
         vec3 normal3p = normal;
         vec3 tangent3p = ph_tangent.xyz;
         vec3 binormal3p = -ph_binormal;
-        // vNormal = normalize( normalMatrix * normal3p );
-        // vTangent = normalize( normalMatrix * binormal3p );
-        // vBitang = normalize( normalMatrix * tangent3p );
 
         vNormal = normalize( normal3p );
         vTangent = normalize( binormal3p );
         vBitang = normalize( tangent3p );
-        // vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
         vec4 wPos = modelMatrix * vec4( position, 1.0 );
-        // vViewPosition = -mvPosition.xyz;
         vViewPosition = cameraPosition - wPos.xyz;
         vec2 circleMotion;
         circleMotion.x = cos(_elapsedTime*pi2);
         circleMotion.y = sin(_elapsedTime*pi2);
         vLightPos = vec3( circleMotion.x,.8,circleMotion.y ); //world
-        // vLightPos = vec3( circleMotion.x,0.0,circleMotion.y ); //world
-        // vLightPos = normalize(vec3(-30.0,30.0,0.0)); //world
         vLightPos = normalize(vLightPos);
         vLightPos = (viewMatrix * vec4(vLightPos,0.0)).xyz;
         gl_Position = projectionMatrix * viewMatrix * wPos;
@@ -65,20 +58,13 @@
         #extension GL_OES_standard_derivatives : enable
 
     #endif
-    // #ifdef GL_OES_standard_derivatives
-
-    // #extension GL_EXT_shader_texture_lod : enable
-            // #define GL_EXT_shader_texture_lod 1
-
     #define PI2 6.28318530717959;
     //normal map
     varying highp vec3 vTangent;
     varying highp vec3 vBitang;
     varying highp vec3 vNormal;
 
-
     varying vec2 vUv;
-
 
     //single light
     varying vec3 vLightPos;
@@ -89,12 +75,10 @@
     uniform sampler2D _texDiffuse;
     uniform sampler2D _texSpec;
 
-
     uniform samplerCube _cubeAmb;
     uniform samplerCube _cubeSpec;
     uniform float _ambGamma;
     uniform float _ambPow;
-
 
     uniform float _refGamma;
     uniform float _refPower;
@@ -134,12 +118,6 @@
     {
         return  float( fres + (1.0 - fres) * (1.0 - pow( dot( V, H ), 5.0)) );
     }
-    // float Fschlick( float fres , vec3 V, vec3 H )
-    // {
-        // float kr = (fres-1.0)/(fres+1.0);
-        // kr *= kr;
-        // return kr + (1.0-kr)*pow( 1.0 - dot(V,H) , 5.0);
-    // }
 
     float Mfresnel(vec3 eye, vec3 normal, float reflectivity, float fresnelStrength )
     {
@@ -166,22 +144,15 @@
             return;
         }
         vec2 screenCoord = gl_FragCoord.xy * _screenStuff.xy;
-        // vec2 screenCoord = gl_FragCoord.xy ;
-        // gl_FragColor = vec4( screenCoord, 0.0 , 1.0);
-        // return;
 
         vec3 lightColor = vec3(0.0);
         vec3 finalOutput = vec3(0.0);
         vec4 diffuseTexture = texture2D( _texDiffuse, vUv);
-        // diffuseTexture.xyz = vec3(1.0, .1, .1);
         vec3 specTexture = texture2D( _texSpec, vUv).xyz;
-        // specTexture.xyz = vec3( 1.0 );
         vec3 normalMap = texture2D(_texNormal, vUv).xyz;
 
         vec3 finalNormal;
         vec3 bitangent3p, tangent3p, normal3p;
-
-        // normalMap = (normalMap * 2.55000000000000000E002) / 1.28000000000000000E002 - 1.00000000000000000E000;
 
         if(_choiceNormal == 1){
 
@@ -205,15 +176,8 @@
             gl_FragColor.xyz = ( viewMatrix * vec4(finalNormal, 0.0)).xyz;
             return;
         }
-        // finalNormal = normalize(vNormal);
-        // gl_FragColor.xyz = finalNormal;
-        // return;
-        // vec3 lightDir;
         vec3 lightDir = normalize(vLightPos);
         vec3 viewDir = normalize( vViewPosition );
-
-        // reflectVD.y *= -1.0;
-        // reflectVD.y = -reflectVD.y;
 
         float NdotL = dot(finalNormal, lightDir);
         NdotL = clamp(NdotL,0.0, 1.0);
@@ -221,12 +185,10 @@
         // lightColor+=NdotL;
         specTexture.xyz *= _specAdjust;
         specTexture.xyz = clamp(specTexture.xyz, 0.0, 1.0);
-        // gl_FragColor = vec4( specTexture.xyz, 1.0);
-        // return;
+
         vec3 h = normalize(lightDir + viewDir);
         float spec = clamp( dot( finalNormal, h), 0.0, 1.0);
 
-        // vec3 specCol =  Fschlick( vec3(_refRPow) , viewDir, h );
         float specF =  Fschlick( _refRPow , viewDir, h );
         float factor = 0.0397436 * _glossiness + 0.0856832;
         specF *= factor ;
@@ -236,12 +198,10 @@
 
         specF *= _specPower;
 
-        // lightColor+=specF;
         NdotL *= _lightIntensity;
 
 
         float gloss = specTexture.x*_mipBias;
-        // float gloss = _mipBias;
         float specExp = -10.0 / log2( gloss*0.968 + 0.03 );
         specExp *= specExp;
 
@@ -252,12 +212,6 @@
                     0.0,
                     1.0,
                     finalNormal.y
-                    // clamp(
-                    // 	// worldNormalTest.y * 10000.0 - 9999.0,
-                    // 	finalNormal.y,
-                    // 	0.0,
-                    // 	1.0
-                    // )
                 )
             )
         );
@@ -276,55 +230,17 @@
                 floor(65536.0 * normScr.y) 		* r1.w
 
         );
-        // // seed = floor(seed);
-        // vec4 r2 = texture2D( _noiseTex, seed);//radi skroz random je nacelom ekranu
-
-        // seed += screenCoord;
-
-
-
-
-        // seed *=  .015625;//512 /64 //ne mora ni ovo jer mogu da ponovim i u novom domenu su drugi brojevi?
-        // seed = seed - floor(seed);//mozda ne mora?
-
-
-        // screenCoord = gl_FragCoord.xy *  0.015625;
-        // screenCoord -= floor(screenCoord);
-        // gl_FragColor = vec4( seed, 0.0, 1.0);
-        // return;
-        // HINT_UNROLL
-            // vec2 randomSamp33 = texture2D(_noiseTex, seed + float(_glossiness) * 0.015625).xy;
-
-            // vec4 r4 = texture2D( _sampleTex, randomSamp33);
-            // r4.zw = r4.zw * 2.0 - 1.0;
-        // gl_FragColor = vec4( r4.zw, 0.0, 1.0);
-        // return;
         vec2 test = vec2(0.0);
         float tt = 0.0;//dodaj ovde random iz teksture
 
-
-        // #ifdef GL_EXT_shader_texture_lod
-            // #extension GL_EXT_shader_texture_lod : enable
-        // #endif
-
         for( int i=0; i < SAMPLE_NUM; ++i )
         {
-            // vec2 randomSamp = texture2D(_noiseTex, seed + float(i) * 0.015625).xy;
-            // test += randomSamp;
-            // test = r1.x
-            // vec2 randomSamp = texture2D(_noiseTex, seed + float(i) * 0.015625 ).xy;
-            // vec4 r = _uPhongRands[i];
             vec4 r = texture2D( _sampleTex, seed + float(i) * 0.015625 );
-            // vec4 r = texture2D( _sampleTex, seed + tt * 4.0 );
-            // vec4 r = texture2D( _sampleTex, r1.xy + float(i) * 0.015625 );
-            // vec4 r = texture2D( _sampleTex, r1.xy + tt * 4.0 ); //256 8 bit treba mi 64
             tt = r.x;
             r.zw = r.zw * 2.0 - 1.0;
-            // test += r.xy;
             vec3 dir = phongImportanceSample(r, specExp);
             vec3 h = dir.x*basisX + dir.y*basisY + dir.z*basisZ;
 
-            // float pdf = (specExp + 4.0)/(25.1327412287) *
             float pdf = (specExp * 0.039788735773 + 6.283185307175) *
                 pow(
                     clamp(
@@ -336,18 +252,8 @@
                 );
             vec3 lookup = reflect( viewDir, h );
             lookup.y = -lookup.y;
-            // #ifdef GL_EXT_shader_texture_lod
 
-            // 	float lod = (0.5 * log2( (256.0 * 256.0) * SAMPLE_NUM_INV ) + 0.5) - 0.5 * log2( pdf );
-            // 	specccc += SAMPLE_NUM_INV * textureCubeLodEXT( _cubeSpec, lookup, lod);
-            // #else
-                specccc += SAMPLE_NUM_INV * textureCube( _cubeSpec, lookup).xyz;
-            // #endif
-
-
-            // float bb = r.y * r.y;
-            // specccc += bb * textureCube( _cubeSpec, lookup).xyz;
-
+            specccc += SAMPLE_NUM_INV * textureCube( _cubeSpec, lookup).xyz;
         }
 
         #ifdef GL_EXT_shader_texture_lod
@@ -355,10 +261,6 @@
             return;
         #endif
 
-        // test = floor(test);
-        // test *= SAMPLE_NUM_INV;
-        // gl_FragColor = vec4( test * vec2(0.0, 1.0), 0.0, 1.0);
-        // return;
         #ifdef GL_OES_standard_derivatives
 
             vec3 bbb = specccc + dFdx( specccc );
@@ -369,11 +271,6 @@
             bbb += aaa;
             bbb *= .25;
             specccc = bbb;
-            // gl_FragColor = vec4( vec3( bbb ) , 1.0);
-            // return;
-        // #else
-            // gl_FragColor = vec4( vec3( specccc ), 1.0);
-            // return;
         #endif
 
         specccc = pow(specccc, vec3( _refGamma ));
@@ -386,33 +283,17 @@
 
         float glossAdjust = gloss * gloss;
 
-        // gl_FragColor = vec4(
-        // 	vec3(
-        // 		Mfresnel(
-        // 			viewDir,
-        // 			finalNormal,
-        // 			_refRBias,
-        // 			_refRPow * glossAdjust
-        // 		)
-        // 	),
-        // 	1.0
-        // );
-        // return;
-
         specccc *= Mfresnel(
             viewDir,
             finalNormal,
             _refRBias,
-            /*1.0 * */
             glossAdjust
         );
 
-        // vec3 ambCube = textureCube( _cubeAmb, vec3( reflectVD ) , _mipBias).xyz;
         vec3 ambCube = textureCube( _cubeAmb, vec3( finalNormal )).xyz;
 
         ambCube = pow(ambCube, vec3(_ambGamma));
         ambCube *= _ambPow;
-        // lightColor += ambCube;
 
         finalOutput = diffuseTexture.xyz * (ambCube + NdotL);
         finalOutput += ( specccc + specF ) * specTexture;

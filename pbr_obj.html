@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>彭延财-pbr_obj</title>
+    <script src="js/libs/three_shader.js"></script>
+    <script src="js/libs/OrbitControls.js"></script>
+    <script src="js/libs/loaders/OBJLoader_pbr_obj.js"></script>
+</head>
+<body>
+<script>
+    var scene, camera, renderer, mesh, controls;
+
+    init();
+    animate();
+
+    function init() {
+        scene = new THREE.Scene();
+
+        var ambient = new THREE.AmbientLight( 0x101030 );
+        scene.add( ambient );
+
+        var directionalLight = new THREE.DirectionalLight(0xffeedd);
+        directionalLight.position.set(0.5, 0.8, 1);
+        scene.add(directionalLight);
+
+        var fillLight = new THREE.DirectionalLight(0xddeeff);
+        fillLight.position.set(-0.5, 0.2, -1);
+        scene.add(fillLight);
+
+        var envPath = 'resource/images/envmaps/';
+        var images = [
+            envPath + 'posx.jpg',
+            envPath + 'negx.jpg',
+            envPath + 'posy.jpg',
+            envPath + 'negy.jpg',
+            envPath + 'posz.jpg',
+            envPath + 'negz.jpg'
+        ];
+        var reflectionCube = new THREE.CubeTextureLoader().load(images);
+        reflectionCube.format = THREE.RGBFormat;
+        scene.background = reflectionCube;
+
+        camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 200);
+        camera.position.z = 300;
+        camera.position.copy(new THREE.Vector3(0, 2, 3));
+
+        var objLoader = new THREE.OBJLoader();
+        objLoader.load('resource/models/FireHydrantMesh.obj', function(object) {
+            object.traverse(function (child) {
+                if (child instanceof THREE.Mesh) {
+                    mesh = child;
+                }
+            });
+
+            var textureLoader = new THREE.TextureLoader();
+            var material = new THREE.MeshStandardMaterial({
+                map: textureLoader.load('resource/images/fire_hydrant_Base_Color.png'),
+                normalMap: textureLoader.load('resource/images/fire_hydrant_Normal_OpenGL.png'),
+                roughnessMap: textureLoader.load('resource/images/fire_hydrant_Roughness.png'),
+                metalnessMap: textureLoader.load('resource/images/fire_hydrant_Metallic.png'),
+                aoMap: textureLoader.load('resource/images/fire_hydrant_Mixed_AO.png'),
+
+//                roughness: 0,
+//                metalness: 1,
+                aoMapIntensity: 0.5
+            });
+            function wrap(texture) {
+                texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
+            }
+            wrap(material.map);
+            wrap(material.normalMap);
+            wrap(material.roughnessMap);
+            wrap(material.metalnessMap);
+            wrap(material.aoMap);
+
+            mesh.material = material;
+            scene.add(mesh);
+        });
+
+        renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+
+        document.body.appendChild(renderer.domElement);
+        window.addEventListener('resize', function () {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }, false);
+
+        controls = new THREE.OrbitControls( camera, renderer.domElement );
+        controls.userPan = false;
+        controls.userPanSpeed = 0.0;
+        controls.maxDistance = 5000.0;
+        controls.maxPolarAngle = Math.PI * 0.895;
+        controls.autoRotate = false;
+        controls.autoRotateSpeed = -10.0;
+    }
+    function animate() {
+        requestAnimationFrame(animate);
+
+        for (var i = 0; i < scene.children.length; i++)
+        {
+            if (scene.children[i] instanceof THREE.Object3D)
+            {
+                scene.children[i].rotation.y += 0.01;
+            }
+        }
+
+        renderer.render(scene, camera);
+        controls.update();
+    }
+</script>
+</body>
+</html>

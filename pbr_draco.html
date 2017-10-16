@@ -29,12 +29,29 @@
         fillLight.position.set(-0.5, 0.2, -1);
         scene.add(fillLight);
 
-        camera = new THREE.PerspectiveCamera(75-60, window.innerWidth / window.innerHeight, 1, 1000);
-        camera.position.z = 3;
+        var envPath = 'resource/images/envmaps/';
+        var images = [
+            envPath + 'posx.jpg',
+            envPath + 'negx.jpg',
+            envPath + 'posy.jpg',
+            envPath + 'negy.jpg',
+            envPath + 'posz.jpg',
+            envPath + 'negz.jpg'
+        ];
+        var reflectionCube = new THREE.CubeTextureLoader().load(images);
+        reflectionCube.format = THREE.RGBFormat;
+        scene.background = reflectionCube;
+
+        camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 200);
+        camera.position.z = 300;
+        camera.position.copy(new THREE.Vector3(0, 2, 3));
 
 //        load draco
         var modelPath = "resource/models/FireHydrantMesh.drc";
         var dracoLoader = new THREE.DRACOLoader();
+//        dracoLoader.setVerbosity(1);
+//        dracoLoader.setDrawMode(THREE.TrianglesDrawMode);
+//        dracoLoader.setSkipDequantization('position', true);
         dracoLoader.load(modelPath, function (bufferGeometry) {
                 if (bufferGeometry.index == null)
                 {
@@ -73,6 +90,7 @@
                     wrap(material.aoMap);
 
                     geometry = new THREE.Mesh(bufferGeometry, material)
+                    geometry.drawMode = dracoLoader.drawMode;
                 }
                 bufferGeometry.computeBoundingBox();
                 if (bufferGeometry.attributes['position'].isQuantized)
@@ -98,8 +116,8 @@
                 geometry.position.x = -midX * scale;
                 geometry.position.y = -midY * scale;
                 geometry.position.z = -midZ * scale;
-//            geometry.castShadow = true;
-//            geometry.receiveShadow = true;
+                geometry.castShadow = true;
+                geometry.receiveShadow = true;
 
                 var selectedObject = scene.getObjectByName("currentMesh");
                 scene.remove(selectedObject);

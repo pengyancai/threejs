@@ -32,19 +32,6 @@
         camera = new THREE.PerspectiveCamera(75-60, window.innerWidth / window.innerHeight, 1, 1000);
         camera.position.z = 3;
 
-        var textureLoader = new THREE.TextureLoader();
-        var material = new THREE.MeshStandardMaterial({
-            map: textureLoader.load('resource/images/fire_hydrant_Base_Color.png'),
-            normapMap: textureLoader.load('resource/images/fire_hydrant_Normal_OpenGL.png'),
-            roughnessMap: textureLoader.load('resource/images/fire_hydrant_Roughness.png'),
-            metalnessMap: textureLoader.load('resource/images/fire_hydrant_Metallic.png'),
-            aoMap: textureLoader.load('resource/images/fire_hydrant_Mixed_AO.png'),
-
-//                roughness: 0,
-//                metalness: 1,
-            aoMapIntensity: 0.5
-        });
-
 //        load draco
         var modelPath = "resource/models/FireHydrantMesh.drc";
         var dracoLoader = new THREE.DRACOLoader();
@@ -63,6 +50,28 @@
                 else
                 {
                     bufferGeometry.computeVertexNormals();
+
+                    var textureLoader = new THREE.TextureLoader();
+                    var material = new THREE.MeshStandardMaterial({
+                        map: textureLoader.load('resource/images/fire_hydrant_Base_Color.png'),
+                        normalMap: textureLoader.load('resource/images/fire_hydrant_Normal_OpenGL.png'),
+                        roughnessMap: textureLoader.load('resource/images/fire_hydrant_Roughness.png'),
+                        metalnessMap: textureLoader.load('resource/images/fire_hydrant_Metallic.png'),
+                        aoMap: textureLoader.load('resource/images/fire_hydrant_Mixed_AO.png'),
+
+//                        roughness: 0,
+//                        metalness: 1,
+                        aoMapIntensity: 0.5
+                    });
+                    function wrap(texture) {
+                        texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
+                    }
+                    wrap(material.map);
+                    wrap(material.normalMap);
+                    wrap(material.roughnessMap);
+                    wrap(material.metalnessMap);
+                    wrap(material.aoMap);
+
                     geometry = new THREE.Mesh(bufferGeometry, material)
                 }
                 bufferGeometry.computeBoundingBox();

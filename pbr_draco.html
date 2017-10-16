@@ -49,9 +49,6 @@
 //        load draco
         var modelPath = "resource/models/FireHydrantMesh.drc";
         var dracoLoader = new THREE.DRACOLoader();
-//        dracoLoader.setVerbosity(1);
-//        dracoLoader.setDrawMode(THREE.TrianglesDrawMode);
-//        dracoLoader.setSkipDequantization('position', true);
         dracoLoader.load(modelPath, function (bufferGeometry) {
                 if (bufferGeometry.index == null)
                 {

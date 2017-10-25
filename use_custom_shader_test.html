@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>彭延财-use_custom_shader_test</title>
+    <script src="js/libs/three_shader.js"></script>
+    <script src="js/libs/OrbitControls.js"></script>
+    <script src="js/libs/dat.gui.min.js"></script>
+</head>
+<body>
+<script>
+    var scene, camera, renderer, mesh, controls;
+    var Settings = function() {
+        this._Color = [255,255,255];
+        this._uvOffset1 = [255,255,255];
+        this._uvOffset2 = [255,255,255];
+        this._Angle1 = 0.5;
+        this._Angle2 = 0.5;
+        this._DecalCol = [255,255,255];
+    };
+    var settings = new Settings();
+    var gui = new dat.GUI();
+
+    init();
+    animate();
+
+    function getRequest(jsPath, resultFn) {
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function()
+        {
+            //服务器返回值的处理函数，此处使用匿名函数进行实现
+            if (xhr.readyState == 4 && xhr.status == 200)
+            {
+                var responseText = xhr.responseText;
+                resultFn(responseText);
+            }
+        };
+        xhr.open("GET", jsPath, true);//提交get请求到服务器
+        xhr.send(null);
+    };
+
+    function init() {
+        gui.addColor( settings, '_Color');
+        gui.addColor( settings, '_uvOffset1');
+        gui.addColor( settings, '_uvOffset2');
+        gui.add( settings, '_Angle1', 0.0, 1.0 );
+        gui.add( settings, '_Angle2', 0.0, 1.0 );
+        gui.addColor( settings, '_DecalCol');
+
+        scene = new THREE.Scene();
+
+        camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 1000);
+        camera.position.z = 3;
+
+        var geometry = new THREE.CubeGeometry(1.0, 1.0, 1.0);
+        var material = new THREE.MeshBasicMaterial({
+            color: 0x00ff00,
+            wireframe: false
+        });
+
+        var _MainTexMap = new THREE.TextureLoader().load("resource/images/d3195c0585a4803cd605e8703a16b7f2.jpeg");
+        _MainTexMap.wrapS = _MainTexMap.wrapT = THREE.RepeatWrapping;
+        var _DecalTexMap = new THREE.TextureLoader().load("resource/images/rgbNoise.png");
+        _DecalTexMap.wrapS = _DecalTexMap.wrapT = THREE.RepeatWrapping;
+
+        getRequest('resource/shader/test.frag', function (fragmentShaderStr) {
+            getRequest('resource/shader/test.vert', function (vertexShaderStr) {
+                var uniforms =
+                {
+                    _MainTex: {value: _MainTexMap},
+                    _Color: { value: new THREE.Vector3(1, 1, 1)},
+                    _uvOffset1: { value: new THREE.Vector2(1, 1)},
+                    _uvOffset2: { value: new THREE.Vector2(1, 1)},
+                    _Angle1: { value: 0.5 },
+                    _Angle2: { value: 0.5 },
+                    _DecalCol: { value: new THREE.Vector3(1, 1, 1)},
+                    _DecalTex: {value: _DecalTexMap}
+                };
+                var vertShader = vertexShaderStr;
+                var fragShader = fragmentShaderStr;
+                var shaderMaterial = new THREE.ShaderMaterial(
+                    {
+                        uniforms:uniforms,
+                        vertexShader:vertShader,
+                        fragmentShader:fragShader
+                    }
+                );
+
+                mesh = new THREE.Mesh(geometry, shaderMaterial);
+                scene.add(mesh);
+            });
+        });
+
+        renderer = new THREE.WebGLRenderer({
+            antialias:true,       //是否开启反锯齿
+            precision:"highp"    //着色精度选择
+        });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+
+        document.body.appendChild(renderer.domElement);
+        window.addEventListener('resize', function () {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }, false);
+
+        controls = new THREE.OrbitControls(camera);
+        controls.addEventListener('change', function () {
+            renderer.render(scene, camera);
+        });
+    }
+    function animate() {
+        requestAnimationFrame(animate);
+
+        if (mesh instanceof THREE.Object3D)
+        {
+            if (settings.onRotate)
+            {
+                mesh.rotation.y += 0.01;
+            }
+
+            mesh.material.uniforms._Color.value.set(settings._Color[0]/255, settings._Color[1]/255, settings._Color[2]/255);
+            mesh.material.uniforms._uvOffset1.value.set(settings._uvOffset1[0]/255, settings._uvOffset1[1]/255);
+            mesh.material.uniforms._uvOffset2.value.set(settings._uvOffset2[0]/255, settings._uvOffset2[1]/255);
+            mesh.material.uniforms._Angle1.value = settings._Angle1;
+            mesh.material.uniforms._Angle2.value = settings._Angle2;
+            mesh.material.uniforms._DecalCol.value.set(settings._DecalCol[0]/255, settings._DecalCol[1]/255, settings._DecalCol[2]/255);
+        }
+
+        controls.update();
+        renderer.render(scene, camera);
+    }
+</script>
+</body>
+</html>

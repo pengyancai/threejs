@@ -15,3 +15,5 @@ _**demo预览列表**_
 * [unrealShader和obj模型](https://pengyancai.github.io/threejs/unrealShader_obj.html)
 * [官方加载draco模型](https://pengyancai.github.io/threejs/draco_example/webgl_loader_draco.html)
 * [火球shader](https://pengyancai.github.io/threejs/use_custom_shader_fireball.html)
+* [两个纹理旋转缩放和变色](https://pengyancai.github.io/threejs/use_custom_shader_test.html)
+* [从u3d的shaderlab移植过来的shader,半透明效果需要改善](https://pengyancai.github.io/threejs/use_custom_shader_wing_uv.html)

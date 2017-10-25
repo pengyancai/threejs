@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>彭延财-use_custom_shader_wing_uv</title>
+    <script src="js/libs/three_shader.js"></script>
+    <script src="js/libs/OrbitControls.js"></script>
+    <script src="js/libs/dat.gui.min.js"></script>
+    <script src="js/libs/loaders/OBJLoader_pbr_obj.js"></script>
+</head>
+<body>
+<script>
+    var scene, camera, renderer, mesh, controls;
+    var Settings = function() {
+        this._FlowVector1 = [255,0,255];
+        this._FlowVector2 = [255,0,255];
+        this._Time = 1.5;
+        this._Color = [255,255,255];
+        this._Tex1_Tiling = 1.0;
+        this._Tex1_Offset = 0.0;
+        this._Tex2_Tiling = 1.0;
+        this._Tex2_Offset = 0.0;
+        this._AlphaMask_Tiling = 1.0;
+        this._AlphaMask_Offset = 0.0;
+    };
+    var settings = new Settings();
+    var gui = new dat.GUI();
+
+    init();
+    animate();
+
+    function getRequest(jsPath, resultFn) {
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function()
+        {
+            //服务器返回值的处理函数，此处使用匿名函数进行实现
+            if (xhr.readyState == 4 && xhr.status == 200)
+            {
+                var responseText = xhr.responseText;
+                resultFn(responseText);
+            }
+        };
+        xhr.open("GET", jsPath, true);//提交get请求到服务器
+        xhr.send(null);
+    };
+
+    function init() {
+        gui.addColor( settings, '_FlowVector1');
+        gui.addColor( settings, '_FlowVector2');
+        gui.add( settings, '_Time', 0.0, 10.0 );
+        gui.add( settings, '_Tex1_Tiling', 0.0, 10.0 );
+        gui.add( settings, '_Tex1_Offset', 0.0, 10.0 );
+        gui.add( settings, '_Tex2_Tiling', 0.0, 10.0 );
+        gui.add( settings, '_Tex2_Offset', 0.0, 10.0 );
+        gui.add( settings, '_AlphaMask_Tiling', 0.0, 10.0 );
+        gui.add( settings, '_AlphaMask_Offset', 0.0, 10.0 );
+        gui.addColor( settings, '_Color');
+
+        scene = new THREE.Scene();
+
+        camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 1000);
+        camera.position.z = 3;
+
+//        var geometry = new THREE.PlaneGeometry(1.0, 1.0);
+
+        var loader = new THREE.OBJLoader();
+        loader.load( 'resource/models/wing_uv.obj', function ( geometry ) {
+            geometry.traverse( function ( child ) {
+                if ( child instanceof THREE.Mesh ) {
+                    mesh = child;
+                    var _Tex1Map = new THREE.TextureLoader().load("resource/images/wing_1.jpg");
+                    _Tex1Map.wrapS = _Tex1Map.wrapT = THREE.RepeatWrapping;
+                    _Tex1Map.premultiplyAlpha = true;
+                    var _Tex1_maskMap = new THREE.TextureLoader().load("resource/images/wing_1_mask.png");
+                    _Tex1_maskMap.wrapS = _Tex1_maskMap.wrapT = THREE.RepeatWrapping;
+                    var _Tex2Map = new THREE.TextureLoader().load("resource/images/wing_2.png");
+                    _Tex2Map.wrapS = _Tex2Map.wrapT = THREE.RepeatWrapping;
+                    var _AlphaMaskMap = new THREE.TextureLoader().load("resource/images/wing_a.png");
+                    _AlphaMaskMap.wrapS = _AlphaMaskMap.wrapT = THREE.ClampToEdgeWrapping;
+
+                    getRequest('resource/shader/wing_uv.frag', function (fragmentShaderStr) {
+                        getRequest('resource/shader/wing_uv.vert', function (vertexShaderStr) {
+                            var uniforms =
+                                {
+                                    _Tex1: {value: _Tex1Map},
+                                    _Tex1_mask: {value: _Tex1_maskMap},
+                                    _Tex2: {value: _Tex2Map},
+                                    _AlphaMask: {value: _AlphaMaskMap},
+                                    _FlowVector1: { value: new THREE.Vector2(1.0, 0)},
+                                    _FlowVector2: { value: new THREE.Vector2(2.0, 0)},
+                                    _Time: { value: 1.0 },
+                                    _Tex1_Tiling: { value: 1.0 },
+                                    _Tex1_Offset: { value: 0.0 },
+                                    _Tex2_Tiling: { value: 1.0 },
+                                    _Tex2_Offset: { value: 0.0 },
+                                    _AlphaMask_Tiling: { value: 1.0 },
+                                    _AlphaMask_Offset: { value: 0.0 },
+                                    _Color: { value: new THREE.Vector3(0.6, 0.78, 1.0)}
+                                };
+                            var vertShader = vertexShaderStr;
+                            var fragShader = fragmentShaderStr;
+                            var shaderMaterial = new THREE.ShaderMaterial(
+                                {
+                                    uniforms:uniforms,
+                                    vertexShader:vertShader,
+                                    fragmentShader:fragShader
+                                }
+                            );
+                            mesh.material = shaderMaterial;
+                        });
+                    });
+                }
+            });
+            geometry.scale.multiplyScalar( 0.001 );
+            scene.add( geometry );
+        } );
+
+        renderer = new THREE.WebGLRenderer({
+            antialias:true,       //是否开启反锯齿
+            precision:"highp"    //着色精度选择
+        });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+
+        document.body.appendChild(renderer.domElement);
+        window.addEventListener('resize', function () {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }, false);
+
+        controls = new THREE.OrbitControls(camera);
+        controls.addEventListener('change', function () {
+            renderer.render(scene, camera);
+        });
+    }
+    function animate() {
+        requestAnimationFrame(animate);
+
+        if (mesh instanceof THREE.Object3D)
+        {
+//            mesh.rotation.y += 0.01;
+            if (mesh.material.type == "ShaderMaterial")
+            {
+                mesh.material.uniforms._FlowVector1.value.set(settings._FlowVector1[0]/255, settings._FlowVector1[1]/255);
+                mesh.material.uniforms._FlowVector2.value.set(settings._FlowVector2[0]/255 * 10.0, settings._FlowVector2[1]/255 * 10.0);
+                mesh.material.uniforms._Time.value += 0.01 * settings._Time;
+                mesh.material.uniforms._Tex1_Tiling.value = settings._Tex1_Tiling;
+                mesh.material.uniforms._Tex1_Offset.value = settings._Tex1_Offset;
+                mesh.material.uniforms._Tex2_Tiling.value = settings._Tex2_Tiling;
+                mesh.material.uniforms._Tex2_Offset.value = settings._Tex2_Offset;
+                mesh.material.uniforms._AlphaMask_Tiling.value = settings._AlphaMask_Tiling;
+                mesh.material.uniforms._AlphaMask_Offset.value = settings._AlphaMask_Offset;
+                mesh.material.uniforms._Color.value.set(settings._Color[0]/255, settings._Color[1]/255, settings._Color[2]/255);
+            }
+        }
+
+        controls.update();
+        renderer.render(scene, camera);
+    }
+</script>
+</body>
+</html>

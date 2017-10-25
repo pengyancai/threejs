@@ -23,12 +23,14 @@
 <script type="x-shader/x-fragment" id="fragment-shader">
     uniform float resolution;
     uniform sampler2D texture;
+    uniform sampler2D tex_mask;
     varying vec2 vUv;
     void main()
     {
         vec2 uv = vUv;
-        vec3 color = texture2D(texture, uv).rgb;
-        gl_FragColor = vec4(color, 1.0);
+        vec4 color = texture2D(texture, uv);
+        vec4 color_mask = texture2D(tex_mask, uv);
+        gl_FragColor = color * color_mask.a;
         //gl_FragColor = vec4(1.0, 0, 0, 1.0);
     }
 </script>
@@ -54,7 +56,8 @@
             {
                 resolution:{value: new THREE.Vector2()},
                 time:{value: 0.2},
-                texture:{value: new THREE.TextureLoader().load("resource/images/d3195c0585a4803cd605e8703a16b7f2.jpeg")}
+                texture:{value: new THREE.TextureLoader().load("resource/images/d3195c0585a4803cd605e8703a16b7f2.jpeg")},
+                tex_mask:{value: new THREE.TextureLoader().load("resource/images/wing_a.png")}
             };
         uniforms.resolution.value.x = window.innerWidth;
         uniforms.resolution.value.y = window.innerHeight;

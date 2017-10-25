@@ -14,4 +14,4 @@ _**demo预览列表**_
 * [pbr和obj模型](https://pengyancai.github.io/threejs/pbr_obj.html)
 * [unrealShader和obj模型](https://pengyancai.github.io/threejs/unrealShader_obj.html)
 * [官方加载draco模型](https://pengyancai.github.io/threejs/draco_example/webgl_loader_draco.html)
-* [火球shader](https://pengyancai.github.io/threejs/draco_example/use_custom_shader_fireball.html)
+* [火球shader](https://pengyancai.github.io/threejs/use_custom_shader_fireball.html)

@@ -24,8 +24,9 @@
             wireframe: true
         });
 
+        var path = 'resource/models/Suzanne.js';
         var loader = new THREE.JSONLoader();
-        loader.load('resource/models/Suzanne.js', function (geometry) {
+        loader.load(path, function (geometry) {
             mesh = new THREE.Mesh(geometry, material);
             mesh.rotation.x = 90;
             scene.add(mesh);

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>彭延财-use_custom_shader_texcoord_offset</title>
+    <title>彭延财-use_custom_shader_checker_texcoord_offset</title>
     <script src="js/libs/three_shader.js"></script>
     <script src="js/libs/OrbitControls.js"></script>
     <script src="js/libs/dat.gui.min.js"></script>
@@ -11,8 +11,9 @@
 <script>
     var scene, camera, renderer, mesh, controls;
     var Settings = function() {
-        this._Color = [255,255,255];
-        this._offsetX = 0;
+        this._Color1 = [255.0,0,0];
+        this._Color2 = [0,0,255.0];
+        this._offsetX = 0.1;
         this._offsetY = 0.5;
         this._scaleX = 10.0;
         this._scaleY = 10.0;
@@ -39,7 +40,8 @@
     };
 
     function init() {
-        gui.addColor( settings, '_Color');
+        gui.addColor( settings, '_Color1');
+        gui.addColor( settings, '_Color2');
         gui.add( settings, '_offsetX', -10.0, 10.0 );
         gui.add( settings, '_offsetY', -10.0, 10.0 );
         gui.add( settings, '_scaleX', -10.0, 10.0 );
@@ -59,16 +61,17 @@
         var _MainTexMap = new THREE.TextureLoader().load("resource/images/Checker.png");
         _MainTexMap.wrapS = _MainTexMap.wrapT = THREE.RepeatWrapping;
 
-        getRequest('resource/shader/texcoord_offset.frag', function (fragmentShaderStr) {
-            getRequest('resource/shader/texcoord_offset.vert', function (vertexShaderStr) {
+        getRequest('resource/shader/checker_texcoord_offset.frag', function (fragmentShaderStr) {
+            getRequest('resource/shader/checker_texcoord_offset.vert', function (vertexShaderStr) {
                 var uniforms =
                 {
                     _MainTex: {value: _MainTexMap},
-                    _Color: { value: new THREE.Vector3(1, 1, 1)},
+                    _Color1: { value: new THREE.Vector3(1.0, 0, 0)},
+                    _Color2: { value: new THREE.Vector3(0, 0, 1.0)},
                     _offsetX: { value: 0 },
-                    _offsetY: { value: 0.5 },
-                    _scaleX: { value: 1.0 },
-                    _scaleY: { value: 1.0 }
+                    _offsetY: { value: 0 },
+                    _scaleX: { value: 10.0 },
+                    _scaleY: { value: 10.0 }
                 };
                 var vertShader = vertexShaderStr;
                 var fragShader = fragmentShaderStr;
@@ -109,7 +112,8 @@
 
         if (mesh instanceof THREE.Object3D)
         {
-            mesh.material.uniforms._Color.value.set(settings._Color[0]/255, settings._Color[1]/255, settings._Color[2]/255);
+            mesh.material.uniforms._Color1.value.set(settings._Color1[0]/255.0, settings._Color1[1]/255.0, settings._Color1[2]/255.0);
+            mesh.material.uniforms._Color2.value.set(settings._Color2[0]/255.0, settings._Color2[1]/255.0, settings._Color2[2]/255.0);
             mesh.material.uniforms._offsetX.value += 0.01 * settings._offsetX;
             mesh.material.uniforms._offsetY.value += 0.01 * settings._offsetY;
             mesh.material.uniforms._scaleX.value = settings._scaleX;

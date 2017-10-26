@@ -19,3 +19,5 @@ _**demo预览列表**_
 * [从u3d的shaderlab移植过来的shader,半透明效果需要改善](https://pengyancai.github.io/threejs/use_custom_shader_wing_uv.html)
 * [纹理坐标偏移shader](https://pengyancai.github.io/threejs/use_custom_shader_texcoord_offset.html)
 * [checker纹理坐标偏移shader](https://pengyancai.github.io/threejs/use_custom_shader_checker_texcoord_offset.html)
+* [Barrel Blur shader](https://pengyancai.github.io/threejs/use_custom_shader_BarrelBlur.html)
+* [卡通shader](https://pengyancai.github.io/threejs/use_custom_shader_ToonShader.html)

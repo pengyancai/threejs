@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>彭延财-use_custom_shader_test</title>
+    <script src="js/libs/three_shader.js"></script>
+    <script src="js/libs/OrbitControls.js"></script>
+    <script src="js/libs/dat.gui.min.js"></script>
+</head>
+<body>
+<script>
+    var scene, camera, renderer, mesh, controls;
+    var Settings = function() {
+        this._Color = [255,255,255];
+        this._offsetX = 0;
+        this._offsetY = 0.5;
+        this._scaleX = 10.0;
+        this._scaleY = 10.0;
+    };
+    var settings = new Settings();
+    var gui = new dat.GUI();
+
+    init();
+    animate();
+
+    function getRequest(jsPath, resultFn) {
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function()
+        {
+            //服务器返回值的处理函数，此处使用匿名函数进行实现
+            if (xhr.readyState == 4 && xhr.status == 200)
+            {
+                var responseText = xhr.responseText;
+                resultFn(responseText);
+            }
+        };
+        xhr.open("GET", jsPath, true);//提交get请求到服务器
+        xhr.send(null);
+    };
+
+    function init() {
+        gui.addColor( settings, '_Color');
+        gui.add( settings, '_offsetX', -10.0, 10.0 );
+        gui.add( settings, '_offsetY', -10.0, 10.0 );
+        gui.add( settings, '_scaleX', -10.0, 10.0 );
+        gui.add( settings, '_scaleY', -10.0, 10.0 );
+
+        scene = new THREE.Scene();
+
+        camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 1000);
+        camera.position.z = 3;
+
+        var geometry = new THREE.CylinderGeometry(0.5, 0.5, 2.5, 50.0);
+        var material = new THREE.MeshBasicMaterial({
+            color: 0x00ff00,
+            wireframe: false
+        });
+
+        var _MainTexMap = new THREE.TextureLoader().load("resource/images/Checker.png");
+        _MainTexMap.wrapS = _MainTexMap.wrapT = THREE.RepeatWrapping;
+
+        getRequest('resource/shader/texcoord_offset.frag', function (fragmentShaderStr) {
+            getRequest('resource/shader/texcoord_offset.vert', function (vertexShaderStr) {
+                var uniforms =
+                {
+                    _MainTex: {value: _MainTexMap},
+                    _Color: { value: new THREE.Vector3(1, 1, 1)},
+                    _offsetX: { value: 0 },
+                    _offsetY: { value: 0.5 },
+                    _scaleX: { value: 1.0 },
+                    _scaleY: { value: 1.0 }
+                };
+                var vertShader = vertexShaderStr;
+                var fragShader = fragmentShaderStr;
+                var shaderMaterial = new THREE.ShaderMaterial(
+                    {
+                        uniforms:uniforms,
+                        vertexShader:vertShader,
+                        fragmentShader:fragShader
+                    }
+                );
+
+                mesh = new THREE.Mesh(geometry, shaderMaterial);
+                scene.add(mesh);
+            });
+        });
+
+        renderer = new THREE.WebGLRenderer({
+            antialias:true,       //是否开启反锯齿
+            precision:"highp"    //着色精度选择
+        });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+
+        document.body.appendChild(renderer.domElement);
+        window.addEventListener('resize', function () {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }, false);
+
+        controls = new THREE.OrbitControls(camera);
+        controls.addEventListener('change', function () {
+            renderer.render(scene, camera);
+        });
+    }
+    function animate() {
+        requestAnimationFrame(animate);
+
+        if (mesh instanceof THREE.Object3D)
+        {
+            mesh.material.uniforms._Color.value.set(settings._Color[0]/255, settings._Color[1]/255, settings._Color[2]/255);
+            mesh.material.uniforms._offsetX.value += 0.01 * settings._offsetX;
+            mesh.material.uniforms._offsetY.value += 0.01 * settings._offsetY;
+            mesh.material.uniforms._scaleX.value = settings._scaleX;
+            mesh.material.uniforms._scaleY.value = settings._scaleY;
+        }
+
+        controls.update();
+        renderer.render(scene, camera);
+    }
+</script>
+</body>
+</html>

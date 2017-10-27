@@ -7,7 +7,6 @@
     <script src="js/libs/OrbitControls.js"></script>
     <script src="js/libs/dat.gui.min.js"></script>
     <script src="js/libs/loaders/OBJLoader_pbr_obj.js"></script>
-    <script src="js/libs/TGALoader.js"></script>
 </head>
 <body>
 <script>
@@ -67,11 +66,13 @@
             geometry.traverse( function ( child ) {
                 if ( child instanceof THREE.Mesh ) {
                     mesh = child;
-                    var _Tex1Map = new THREE.TGALoader().load("resource/images/wing_1.tga");
+                    var _Tex1Map = new THREE.TextureLoader().load("resource/images/wing_1.jpg");
                     _Tex1Map.wrapS = _Tex1Map.wrapT = THREE.RepeatWrapping;
-                    var _Tex2Map = new THREE.TGALoader().load("resource/images/wing_2.tga");
+                    var _Tex1_maskMap = new THREE.TextureLoader().load("resource/images/wing_1_mask.jpg");
+                    _Tex1_maskMap.wrapS = _Tex1_maskMap.wrapT = THREE.RepeatWrapping;
+                    var _Tex2Map = new THREE.TextureLoader().load("resource/images/wing_2.jpg");
                     _Tex2Map.wrapS = _Tex2Map.wrapT = THREE.RepeatWrapping;
-                    var _AlphaMaskMap = new THREE.TGALoader().load("resource/images/wing_a.tga");
+                    var _AlphaMaskMap = new THREE.TextureLoader().load("resource/images/wing_a.jpg");
                     _AlphaMaskMap.wrapS = _AlphaMaskMap.wrapT = THREE.ClampToEdgeWrapping;
 
                     getRequest('resource/shader/wing_uv.frag', function (fragmentShaderStr) {
@@ -79,6 +80,7 @@
                             var uniforms =
                                 {
                                     _Tex1: {value: _Tex1Map},
+                                    _Tex1_mask: {value: _Tex1_maskMap},
                                     _Tex2: {value: _Tex2Map},
                                     _AlphaMask: {value: _AlphaMaskMap},
                                     _FlowVector1: { value: new THREE.Vector2(1.0, 0)},
@@ -121,7 +123,7 @@
             antialias:true,       //是否开启反锯齿
             precision:"highp"    //着色精度选择
         });
-//        renderer.setClearColor( 0xAAAAAA );
+        renderer.setClearColor( 0x474747 );
         renderer.setSize(window.innerWidth, window.innerHeight);
 
         document.body.appendChild(renderer.domElement);

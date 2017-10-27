@@ -123,6 +123,7 @@
             antialias:true,       //是否开启反锯齿
             precision:"highp"    //着色精度选择
         });
+        renderer.shadowMapCullFace = THREE.CullFaceNone;
         renderer.setClearColor( 0x474747 );
         renderer.setSize(window.innerWidth, window.innerHeight);
 
@@ -149,7 +150,7 @@
             {
                 mesh.material.uniforms._FlowVector1.value.set(settings._FlowVector1[0]/255.0, settings._FlowVector1[1]/255.0);
                 mesh.material.uniforms._FlowVector2.value.set((settings._FlowVector2[0]/255.0) * 2.0, (settings._FlowVector2[1]/255.0) * 2.0);
-                mesh.material.uniforms._Time.value += 0.01 * settings._Time;
+//                mesh.material.uniforms._Time.value += 0.01 * settings._Time;
                 mesh.material.uniforms._Tex1_Tiling.value = settings._Tex1_Tiling;
                 mesh.material.uniforms._Tex1_Offset.value = settings._Tex1_Offset;
                 mesh.material.uniforms._Tex2_Tiling.value = settings._Tex2_Tiling;

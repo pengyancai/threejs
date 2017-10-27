@@ -16,7 +16,7 @@ _**demo预览列表**_
 * [官方加载draco模型](https://pengyancai.github.io/threejs/draco_example/webgl_loader_draco.html)
 * [火球shader](https://pengyancai.github.io/threejs/use_custom_shader_fireball.html)
 * [两个纹理旋转缩放和变色](https://pengyancai.github.io/threejs/use_custom_shader_test.html)
-* [从u3d的shaderlab移植过来的shader,半透明效果需要改善](https://pengyancai.github.io/threejs/use_custom_shader_wing_uv.html)
+* [从u3d的shaderlab移植过来的shader](https://pengyancai.github.io/threejs/use_custom_shader_wing_uv.html)
 * [纹理坐标偏移shader](https://pengyancai.github.io/threejs/use_custom_shader_texcoord_offset.html)
 * [checker纹理坐标偏移shader](https://pengyancai.github.io/threejs/use_custom_shader_checker_texcoord_offset.html)
 * [Barrel Blur shader](https://pengyancai.github.io/threejs/use_custom_shader_BarrelBlur.html)

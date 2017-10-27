@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>彭延财-use_custom_shader_RadialBlur</title>
+    <script src="js/libs/three_shader.js"></script>
+    <script src="js/libs/OrbitControls.js"></script>
+    <script src="js/libs/dat.gui.min.js"></script>
+    <script src="js/libs/loaders/OBJLoader_pbr_obj.js"></script>
+</head>
+<body>
+<script>
+    var scene, camera, renderer, mesh, controls;
+    var Settings = function() {
+        this.lightX = 1.0;
+        this.lightY = 1.0;
+        this.lightZ = 1.0;
+        this.color1 = [ 255, 141, 124, 255 ]; // RGB with alpha
+        this.color2 = [ 70, 53, 53, 255 ]; // RGB with alpha
+        this.lightDir = 0.5;
+    };
+    var settings = new Settings();
+    var gui = new dat.GUI();
+
+    init();
+    animate();
+
+    function getRequest(jsPath, resultFn) {
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function()
+        {
+            //服务器返回值的处理函数，此处使用匿名函数进行实现
+            if (xhr.readyState == 4 && xhr.status == 200)
+            {
+                var responseText = xhr.responseText;
+                resultFn(responseText);
+            }
+        };
+        xhr.open("GET", jsPath, true);//提交get请求到服务器
+        xhr.send(null);
+    };
+
+    function init() {
+        gui.add( settings, 'lightX', -1.0, 1.0);
+        gui.add( settings, 'lightY', -1.0, 1.0);
+        gui.add( settings, 'lightZ', -1.0, 1.0);
+        gui.addColor( settings, 'color1');
+        gui.addColor( settings, 'color2');
+        gui.add( settings, 'lightDir', 0, 1.0);
+
+        scene = new THREE.Scene();
+
+        var directionalLight = new THREE.DirectionalLight( 0xffffff );
+        scene.add( directionalLight );
+        directionalLight.position.set( 1, 1, 1 );
+
+        camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 1000);
+        camera.lookAt(scene.position);
+        camera.position.z = 3;
+
+        var loader = new THREE.OBJLoader();
+        loader.load( 'resource/models/toon_01.obj', function ( geometry ) {
+            geometry.traverse( function ( child ) {
+                if ( child instanceof THREE.Mesh ) {
+                    mesh = child;
+                    getRequest('resource/shader/ToonShader2.frag', function (fragmentShaderStr) {
+                        getRequest('resource/shader/ToonShader2.vert', function (vertexShaderStr) {
+                            var uniforms =
+                                {
+                                    light: {type: 'v3', value: directionalLight.position},
+                                    color1: {type: 'v3', value: new THREE.Vector3(1.0, 0, 0)},
+                                    color2: {type: 'v3', value: new THREE.Vector3(0, 0, 1.0)},
+                                    lightDir: {type: 'f', value: 0.5}
+                                };
+                            var vertShader = vertexShaderStr;
+                            var fragShader = fragmentShaderStr;
+                            var shaderMaterial = new THREE.ShaderMaterial(
+                                {
+                                    uniforms: uniforms,
+                                    vertexShader: vertShader,
+                                    fragmentShader: fragShader
+                                });
+
+                            mesh.material = shaderMaterial;
+                        });
+                    });
+                }
+                });
+            geometry.scale.multiplyScalar( 0.01 );
+            geometry.position.set(0, -0.5, 1.2);
+            scene.add( geometry );
+        });
+
+        renderer = new THREE.WebGLRenderer({
+            antialias:true,       //是否开启反锯齿
+            precision:"highp"    //着色精度选择
+        });
+        renderer.setClearColor( 0xAAAAAA );
+
+        renderer.setSize(window.innerWidth, window.innerHeight);
+
+        document.body.appendChild(renderer.domElement);
+        window.addEventListener('resize', function () {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }, false);
+
+        controls = new THREE.OrbitControls(camera);
+        controls.addEventListener('change', function () {
+            renderer.render(scene, camera);
+        });
+    }
+    function animate() {
+        requestAnimationFrame(animate);
+
+        if (mesh instanceof THREE.Object3D)
+        {
+//            mesh.rotation.y += 0.01;
+            if (mesh.material.type == "ShaderMaterial") {
+                mesh.material.uniforms.light.value.set(settings.lightX, settings.lightY, settings.lightZ);
+                mesh.material.uniforms.color1.value.set(settings.color1[0]/255.0, settings.color1[1]/255.0, settings.color1[2]/255.0);
+                mesh.material.uniforms.color2.value.set(settings.color2[0]/255.0, settings.color2[1]/255.0, settings.color2[2]/255.0);
+                mesh.material.uniforms.lightDir.value = settings.lightDir;
+            }
+        }
+
+        controls.update();
+        renderer.render(scene, camera);
+    }
+</script>
+</body>
+</html>

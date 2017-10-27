@@ -1,12 +1,13 @@
 /*
 
-
+卡通shader
 
 */
 
 uniform vec3 light;
 uniform vec3 color1;
 uniform vec3 color2;
+uniform float lightDir;//0.5
 
 varying vec3 vNormal;
 
@@ -14,7 +15,7 @@ void main()
 {
     float diffuse = dot(normalize(light), vNormal);
     float dir = length(vNormal * vec3(0.0, 0.0, 1.0));
-    if (dir < 0.5)
+    if (dir < lightDir)
     {
         gl_FragColor = vec4(color2, 1.0);
     }
